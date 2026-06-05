@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI4AI — Design UIs, Export to AI Prompts</title>
+  <meta name="description" content="A drag-and-drop UI designer that exports your designs as structured JSON for AI coding tools like Claude, GPT, Cursor, and Copilot." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-gradient {
+      background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(99,102,241,0.15), transparent),
+                  radial-gradient(ellipse 60% 50% at 80% 80%, rgba(168,85,247,0.1), transparent);
+    }
+    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(99,102,241,0.15); }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+
+<!-- Nav -->
+<nav class="fixed top-0 inset-x-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+  <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <span class="text-xl font-bold gradient-text">UI4AI</span>
+      <span class="text-xs text-slate-500 hidden sm:inline">Design → AI Prompt</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="https://ui4ai.vercel.app" class="text-sm text-slate-400 hover:text-white transition-colors">Open App</a>
+      <a href="https://qitao.gumroad.com/l/ui4ai-monthly" class="text-sm px-4 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition-colors">Get Pro</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero-gradient pt-24 pb-16 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-medium mb-6">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+      </span>
+      Live on Vercel
+    </div>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+      Turn <span class="gradient-text">UI Designs</span><br class="sm:hidden" /> Into AI Prompts
+    </h1>
+    <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+      Drag, drop, and style UI controls on a visual canvas. Export as structured JSON that AI coding tools understand instantly. No more vague text descriptions.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="https://ui4ai.vercel.app" class="px-8 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-lg transition-colors shadow-lg shadow-indigo-600/25">
+        Try It Free
+      </a>
+      <a href="#features" class="px-8 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-lg transition-colors border border-slate-700">
+        See Features
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Compatibility -->
+<section class="py-10 px-6 border-y border-slate-800/50">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="text-xs text-slate-500 uppercase tracking-widest mb-4">Works with your favorite AI tools</p>
+    <div class="flex flex-wrap gap-6 justify-center items-center text-slate-500 text-lg font-medium">
+      <span class="hover:text-white transition-colors">Claude</span>
+      <span class="text-slate-700">·</span>
+      <span class="hover:text-white transition-colors">ChatGPT</span>
+      <span class="text-slate-700">·</span>
+      <span class="hover:text-white transition-colors">Cursor</span>
+      <span class="text-slate-700">·</span>
+      <span class="hover:text-white transition-colors">GitHub Copilot</span>
+      <span class="text-slate-700">·</span>
+      <span class="hover:text-white transition-colors">Windsurf</span>
+      <span class="text-slate-700">·</span>
+      <span class="hover:text-white transition-colors">v0</span>
+      <span class="text-slate-700">·</span>
+      <span class="hover:text-white transition-colors">Bolt</span>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section id="features" class="py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Everything you need to <span class="gradient-text">describe UI</span></h2>
+      <p class="text-slate-400 max-w-xl mx-auto">Visual editing beats typing prose every time. Here's what you get.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card-hover p-6 rounded-2xl bg-slate-900 border border-slate-800">
+        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-xl mb-4">🎨</div>
+        <h3 class="font-semibold mb-2">11 UI Controls</h3>
+        <p class="text-sm text-slate-400">Label, Input, Button, Select, Checkbox, Radio, Toggle, Textarea, Image, Divider, OptionList — drag anything onto the canvas.</p>
+      </div>
+      <div class="card-hover p-6 rounded-2xl bg-slate-900 border border-slate-800">
+        <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-xl mb-4">🖱️</div>
+        <h3 class="font-semibold mb-2">Drag & Drop Canvas</h3>
+        <p class="text-sm text-slate-400">Position controls pixel-perfect. Resize, align, and layer them exactly how your design looks.</p>
+      </div>
+      <div class="card-hover p-6 rounded-2xl bg-slate-900 border border-slate-800">
+        <div class="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center text-xl mb-4">📄</div>
+        <h3 class="font-semibold mb-2">Multi-Page Designs</h3>
+        <p class="text-sm text-slate-400">Create full app flows — login page, dashboard, settings — all in one project. Navigate between pages.</p>
+      </div>
+      <div class="card-hover p-6 rounded-2xl bg-slate-900 border border-slate-800">
+        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-xl mb-4">🤖</div>
+        <h3 class="font-semibold mb-2">AI-Readable JSON</h3>
+        <p class="text-sm text-slate-400">Export structured JSON with control types, positions, styles, and semantic descriptions that AI understands.</p>
+      </div>
+      <div class="card-hover p-6 rounded-2xl bg-slate-900 border border-slate-800">
+        <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-xl mb-4">🎯</div>
+        <h3 class="font-semibold mb-2">Format Painter</h3>
+        <p class="text-sm text-slate-400">Copy styles between controls in one click. Match colors, borders, and spacing instantly.</p>
+      </div>
+      <div class="card-hover p-6 rounded-2xl bg-slate-900 border border-slate-800">
+        <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-xl mb-4">🌐</div>
+        <h3 class="font-semibold mb-2">English & 中文</h3>
+        <p class="text-sm text-slate-400">Full bilingual UI. Switch between English and Chinese with one click.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="py-20 px-6 bg-slate-900/50 border-y border-slate-800/50">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12">How It <span class="gradient-text">Works</span></h2>
+    <div class="grid grid-cols-5 gap-2 items-start max-w-3xl mx-auto">
+      <div class="space-y-2">
+        <div class="w-12 h-12 rounded-xl bg-indigo-600 flex items-center justify-center text-lg font-bold mx-auto">1</div>
+        <p class="text-sm font-medium">Drag Controls</p>
+        <p class="text-xs text-slate-500">Pick from 11 UI elements and drop onto canvas</p>
+      </div>
+      <div class="text-slate-700 text-2xl pt-3 hidden sm:block">→</div>
+      <div class="space-y-2">
+        <div class="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center text-lg font-bold mx-auto">2</div>
+        <p class="text-sm font-medium">Style & Arrange</p>
+        <p class="text-xs text-slate-500">Resize, color, align. Add AI descriptions to each control</p>
+      </div>
+      <div class="text-slate-700 text-2xl pt-3 hidden sm:block">→</div>
+      <div class="space-y-2">
+        <div class="w-12 h-12 rounded-xl bg-pink-600 flex items-center justify-center text-lg font-bold mx-auto">3</div>
+        <p class="text-sm font-medium">Export JSON</p>
+        <p class="text-xs text-slate-500">One click. Paste into Claude, GPT, or Cursor. Done.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="py-20 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple <span class="gradient-text">Pricing</span></h2>
+    <p class="text-slate-400 mb-12">Start free. Upgrade when you need more.</p>
+    <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+      <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 text-left">
+        <div class="text-xs text-slate-500 uppercase tracking-wider mb-3">Free</div>
+        <div class="text-3xl font-bold mb-1">$0</div>
+        <div class="text-sm text-slate-400 mb-6">Forever free</div>
+        <ul class="space-y-2 text-sm text-slate-300 mb-6">
+          <li class="flex gap-2"><span class="text-green-400">✓</span> All 11 controls</li>
+          <li class="flex gap-2"><span class="text-green-400">✓</span> 1 page</li>
+          <li class="flex gap-2"><span class="text-green-400">✓</span> JSON export with watermark</li>
+        </ul>
+        <a href="https://ui4ai.vercel.app" class="block text-center py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-medium transition-colors border border-slate-700">Start Free</a>
+      </div>
+      <div class="p-8 rounded-2xl bg-indigo-950/40 border border-indigo-500/30 text-left relative">
+        <div class="absolute -top-3 left-6 px-3 py-0.5 rounded-full bg-indigo-600 text-white text-xs font-medium">Most Popular</div>
+        <div class="text-xs text-indigo-400 uppercase tracking-wider mb-3">Pro</div>
+        <div class="text-3xl font-bold mb-1">$7.99<span class="text-base font-normal text-slate-400">/mo</span></div>
+        <div class="text-sm text-slate-400 mb-6">or $59.99/yr <span class="text-green-400">(save 37%)</span></div>
+        <ul class="space-y-2 text-sm text-slate-300 mb-6">
+          <li class="flex gap-2"><span class="text-green-400">✓</span> Everything in Free</li>
+          <li class="flex gap-2"><span class="text-green-400">✓</span> Unlimited pages</li>
+          <li class="flex gap-2"><span class="text-green-400">✓</span> No watermark</li>
+          <li class="flex gap-2"><span class="text-green-400">✓</span> Priority support</li>
+        </ul>
+        <a href="https://qitao.gumroad.com/l/ui4ai-monthly" class="block text-center py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition-colors">Upgrade to Pro</a>
+        <div class="text-center mt-2"><a href="https://qitao.gumroad.com/l/ui4ai-annual" class="text-xs text-indigo-400 hover:underline">or go annual →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-16 px-6">
+  <div class="max-w-3xl mx-auto text-center p-10 rounded-3xl bg-gradient-to-br from-indigo-600/20 to-purple-600/20 border border-indigo-500/20">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-3">Ready to design smarter?</h2>
+    <p class="text-slate-400 mb-6 max-w-md mx-auto">Stop wrestling with AI prompt wording. Design it visually and let the JSON do the talking.</p>
+    <a href="https://ui4ai.vercel.app" class="inline-block px-8 py-3 rounded-xl bg-white hover:bg-slate-200 text-slate-900 font-semibold text-lg transition-colors shadow-lg">
+      Launch UI4AI →
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-10 px-6 border-t border-slate-800">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+    <div>© 2025 UI4AI. All rights reserved.</div>
+    <div class="flex gap-6">
+      <a href="https://ui4ai.vercel.app" class="hover:text-white transition-colors">App</a>
+      <a href="https://qitao.gumroad.com/l/ui4ai-monthly" class="hover:text-white transition-colors">Pro</a>
+      <a href="https://github.com/qitao2023/ui4ai-landing/issues" class="hover:text-white transition-colors">Feedback</a>
+      <a href="https://qitao.gumroad.com" class="hover:text-white transition-colors">Support</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
