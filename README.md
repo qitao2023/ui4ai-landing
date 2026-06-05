@@ -2,7 +2,15 @@
 
 **The visual editor that bridges UI design and AI code generation.**
 
-👉 **[Try it now → https://ui4ai.vercel.app](https://ui4ai.vercel.app)**
+<p align="center">
+  <a href="https://qitao2023.github.io/ui4ai-landing/">
+    <strong>🌐 产品官网 → qitao2023.github.io/ui4ai-landing/</strong>
+  </a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="https://ui4ai.vercel.app">
+    <strong>🚀 立即使用 → ui4ai.vercel.app</strong>
+  </a>
+</p>
 
 ![](https://img.shields.io/badge/status-live-brightgreen)
 ![](https://img.shields.io/badge/license-proprietary-red)
