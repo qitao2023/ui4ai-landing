@@ -2,6 +2,8 @@
 
 **The visual editor that bridges UI design and AI code generation.**
 
+👉 **[Try it now → https://ui4ai.vercel.app](https://ui4ai.vercel.app)**
+
 ![](https://img.shields.io/badge/status-live-brightgreen)
 ![](https://img.shields.io/badge/license-proprietary-red)
 ![](https://img.shields.io/badge/stack-React%2019%20%7C%20TypeScript%20%7C%20Tailwind-blue)
