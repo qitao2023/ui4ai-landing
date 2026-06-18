@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UI4AI — Design UIs, Export to AI Prompts</title>
-  <meta name="description" content="A drag-and-drop UI designer that exports your designs as structured JSON for AI coding tools like Claude, GPT, Cursor, and Copilot." />
+  <meta name="description" content="A drag-and-drop UI designer with 17 controls. Export structured JSON for HTML, React, or Vue — paste into Claude, GPT, Cursor, or Copilot and get working code." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -64,7 +64,7 @@
       Turn <span class="gradient-text">UI Designs</span><br class="sm:hidden" /> Into AI Prompts
     </h1>
     <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-      Drag, drop, and style UI controls on a visual canvas. Export as structured JSON that AI coding tools understand instantly. No more vague text descriptions.
+      Drag, drop, and style 17 UI controls on a visual canvas. Pick a framework — HTML, React, or Vue — and export structured JSON with pre-computed CSS that AI coding tools understand instantly.
     </p>
     <div class="flex flex-col sm:flex-row gap-3 justify-center">
       <a href="https://ui4ai.vercel.app" class="px-8 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-lg transition-colors shadow-lg shadow-indigo-600/25">
@@ -104,39 +104,77 @@
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-14">
       <h2 class="text-3xl sm:text-4xl font-bold mb-4">Everything you need to <span class="gradient-text">describe UI</span></h2>
-      <p class="text-slate-400 max-w-xl mx-auto">Visual editing beats typing prose every time. Here's what you get.</p>
+      <p class="text-slate-400 max-w-xl mx-auto">17 controls, framework-aware export, and powerful editing tools. Here's what you get.</p>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- 1. 17 Controls -->
       <div class="card-hover p-6 rounded-2xl bg-slate-900 border border-slate-800">
-        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-xl mb-4">🎨</div>
-        <h3 class="font-semibold mb-2">13 UI Controls</h3>
-        <p class="text-sm text-slate-400">Label, Input, Button, Select, Checkbox, Radio, Toggle, Textarea, Image, Divider, OptionList, Card, CondGroup — everything you need to design real interfaces.</p>
+        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-xl mb-4">🧩</div>
+        <h3 class="font-semibold mb-2">17 UI Controls</h3>
+        <p class="text-sm text-slate-400">
+          <span class="text-slate-300">Basic:</span> Label, Input, Button, Select, Checkbox, Radio, Toggle, Textarea, Image, Divider, OptionList<br class="hidden sm:block">
+          <span class="text-slate-300">Containers:</span> Card, CondGroup, Tabs, Modal<br class="hidden sm:block">
+          <span class="text-slate-300">Data:</span> Table, Tree
+        </p>
       </div>
+
+      <!-- 2. Framework-Aware Export -->
       <div class="card-hover p-6 rounded-2xl bg-slate-900 border border-slate-800">
-        <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-xl mb-4">📱</div>
-        <h3 class="font-semibold mb-2">Device Preview</h3>
-        <p class="text-sm text-slate-400">Switch between mobile (375px), tablet (768px), and desktop (1024px) views. See exactly how your design looks on every screen.</p>
+        <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-xl mb-4">🎯</div>
+        <h3 class="font-semibold mb-2">Framework-Aware Export</h3>
+        <p class="text-sm text-slate-400">Choose HTML, React, or Vue. Export includes pre-computed CSS styles, semantic descriptions, and framework-specific rendering instructions — paste into any AI and get working code.</p>
       </div>
+
+      <!-- 3. Conditional UI -->
       <div class="card-hover p-6 rounded-2xl bg-slate-900 border border-slate-800">
         <div class="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center text-xl mb-4">🔀</div>
         <h3 class="font-semibold mb-2">Conditional UI</h3>
-        <p class="text-sm text-slate-400">Design branching interfaces. Toggle a switch, show different content. Perfect for settings panels and multi-state forms.</p>
+        <p class="text-sm text-slate-400">Design branching interfaces with condGroup. Triggered by select, radio, or even table cell values. Perfect for settings panels, multi-state forms, and data-driven layouts.</p>
       </div>
+
+      <!-- 4. Device Preview -->
       <div class="card-hover p-6 rounded-2xl bg-slate-900 border border-slate-800">
-        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-xl mb-4">🤖</div>
-        <h3 class="font-semibold mb-2">AI-Readable JSON</h3>
-        <p class="text-sm text-slate-400">Export structured JSON with control types, positions, styles, and semantic descriptions that AI understands.</p>
+        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-xl mb-4">📱</div>
+        <h3 class="font-semibold mb-2">Device Preview</h3>
+        <p class="text-sm text-slate-400">Switch between mobile (375px), tablet (768px), desktop (1024px), and fullscreen views. See exactly how your design looks on every screen.</p>
       </div>
+
+      <!-- 5. Smart Editing -->
       <div class="card-hover p-6 rounded-2xl bg-slate-900 border border-slate-800">
-        <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-xl mb-4">🎯</div>
+        <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-xl mb-4">✨</div>
         <h3 class="font-semibold mb-2">Smart Editing</h3>
-        <p class="text-sm text-slate-400">Format Painter, multi-select alignment, match-size, and zoom controls. Edit fast, style consistently.</p>
+        <p class="text-sm text-slate-400">Format painter, multi-select alignment (6 directions), match width/height/size, and horizontal/vertical distribute. Keyboard shortcuts for power users.</p>
       </div>
+
+      <!-- 6. GDS Import -->
       <div class="card-hover p-6 rounded-2xl bg-slate-900 border border-slate-800">
-        <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-xl mb-4">🌐</div>
-        <h3 class="font-semibold mb-2">English & 中文</h3>
-        <p class="text-sm text-slate-400">Full bilingual UI. Switch between English and Chinese with one click.</p>
+        <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-xl mb-4">📥</div>
+        <h3 class="font-semibold mb-2">GDS Import</h3>
+        <p class="text-sm text-slate-400">Import from GUI Design Studio XML files. Maps 50+ element types to UI4AI controls, preserves column widths, row heights, and container nesting — no manual rework.</p>
       </div>
+
+      <!-- 7. Layer Management -->
+      <div class="card-hover p-6 rounded-2xl bg-slate-900 border border-slate-800">
+        <div class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center text-xl mb-4">🗂</div>
+        <h3 class="font-semibold mb-2">Layer Management</h3>
+        <p class="text-sm text-slate-400">Full layer panel with indented hierarchy. Right-click context menu, lock/unlock nodes, toggle visibility, and drag to reorder — stay in control of complex designs.</p>
+      </div>
+
+      <!-- 8. Clipboard Table -->
+      <div class="card-hover p-6 rounded-2xl bg-slate-900 border border-slate-800">
+        <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-xl mb-4">📋</div>
+        <h3 class="font-semibold mb-2">Clipboard Table Parsing</h3>
+        <p class="text-sm text-slate-400">Paste tabular data from Excel, Google Sheets, or any web page. UI4AI auto-detects columns and rows, creates a styled table control instantly.</p>
+      </div>
+
+      <!-- 9. Bilingual -->
+      <div class="card-hover p-6 rounded-2xl bg-slate-900 border border-slate-800">
+        <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-xl mb-4">🌐</div>
+        <h3 class="font-semibold mb-2">English & 中文</h3>
+        <p class="text-sm text-slate-400">Full bilingual UI with one-click switch. All labels, tooltips, and AI export instructions available in both English and Chinese.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -145,23 +183,46 @@
 <section class="py-20 px-6 bg-slate-900/50 border-y border-slate-800/50">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-3xl sm:text-4xl font-bold mb-12">How It <span class="gradient-text">Works</span></h2>
-    <div class="grid grid-cols-5 gap-2 items-start max-w-3xl mx-auto">
-      <div class="space-y-2">
-        <div class="w-12 h-12 rounded-xl bg-indigo-600 flex items-center justify-center text-lg font-bold mx-auto">1</div>
-        <p class="text-sm font-medium">Drag Controls</p>
-        <p class="text-xs text-slate-500">Pick from 13 UI elements and drop onto canvas</p>
+    <!-- Desktop: 5 steps + 4 arrows = 9 cols. Mobile: stack vertically, hide arrows -->
+    <div class="flex flex-col sm:grid sm:grid-cols-9 gap-3 sm:gap-1 items-start max-w-4xl mx-auto">
+      <div class="flex sm:flex-col items-center sm:text-center gap-3 sm:gap-0 w-full sm:w-auto">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-indigo-600 flex items-center justify-center text-base sm:text-lg font-bold shrink-0">1</div>
+        <div class="sm:mt-2">
+          <p class="text-sm font-medium">Drag Controls</p>
+          <p class="text-xs text-slate-500 hidden sm:block">Pick from 17 UI elements, drop onto canvas</p>
+        </div>
       </div>
-      <div class="text-slate-700 text-2xl pt-3 hidden sm:block">→</div>
-      <div class="space-y-2">
-        <div class="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center text-lg font-bold mx-auto">2</div>
-        <p class="text-sm font-medium">Style & Arrange</p>
-        <p class="text-xs text-slate-500">Resize, color, align. Add AI descriptions to each control</p>
+      <div class="text-slate-700 text-xl sm:text-2xl sm:pt-3 sm:text-center hidden sm:block">→</div>
+      <div class="flex sm:flex-col items-center sm:text-center gap-3 sm:gap-0 w-full sm:w-auto">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-purple-600 flex items-center justify-center text-base sm:text-lg font-bold shrink-0">2</div>
+        <div class="sm:mt-2">
+          <p class="text-sm font-medium">Style & Arrange</p>
+          <p class="text-xs text-slate-500 hidden sm:block">Resize, color, align. Add descriptions</p>
+        </div>
       </div>
-      <div class="text-slate-700 text-2xl pt-3 hidden sm:block">→</div>
-      <div class="space-y-2">
-        <div class="w-12 h-12 rounded-xl bg-pink-600 flex items-center justify-center text-lg font-bold mx-auto">3</div>
-        <p class="text-sm font-medium">Export JSON</p>
-        <p class="text-xs text-slate-500">One click. Paste into Claude, GPT, or Cursor. Done.</p>
+      <div class="text-slate-700 text-xl sm:text-2xl sm:pt-3 sm:text-center hidden sm:block">→</div>
+      <div class="flex sm:flex-col items-center sm:text-center gap-3 sm:gap-0 w-full sm:w-auto">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-violet-600 flex items-center justify-center text-base sm:text-lg font-bold shrink-0">3</div>
+        <div class="sm:mt-2">
+          <p class="text-sm font-medium">Pick Framework</p>
+          <p class="text-xs text-slate-500 hidden sm:block">Choose HTML, React, or Vue target</p>
+        </div>
+      </div>
+      <div class="text-slate-700 text-xl sm:text-2xl sm:pt-3 sm:text-center hidden sm:block">→</div>
+      <div class="flex sm:flex-col items-center sm:text-center gap-3 sm:gap-0 w-full sm:w-auto">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-pink-600 flex items-center justify-center text-base sm:text-lg font-bold shrink-0">4</div>
+        <div class="sm:mt-2">
+          <p class="text-sm font-medium">Export JSON</p>
+          <p class="text-xs text-slate-500 hidden sm:block">One click. Paste into AI tools</p>
+        </div>
+      </div>
+      <div class="text-slate-700 text-xl sm:text-2xl sm:pt-3 sm:text-center hidden sm:block">→</div>
+      <div class="flex sm:flex-col items-center sm:text-center gap-3 sm:gap-0 w-full sm:w-auto">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-rose-600 flex items-center justify-center text-base sm:text-lg font-bold shrink-0">5</div>
+        <div class="sm:mt-2">
+          <p class="text-sm font-medium">Get Code</p>
+          <p class="text-xs text-slate-500 hidden sm:block">AI generates working code</p>
+        </div>
       </div>
     </div>
   </div>
@@ -171,14 +232,15 @@
 <section class="py-20 px-6">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple <span class="gradient-text">Pricing</span></h2>
-    <p class="text-slate-400 mb-12">Start free. Upgrade when you need more.</p>
+    <p class="text-slate-400 mb-12">Start free. All 17 controls available. Upgrade when you need more.</p>
     <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
       <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 text-left">
         <div class="text-xs text-slate-500 uppercase tracking-wider mb-3">Free</div>
         <div class="text-3xl font-bold mb-1">$0</div>
         <div class="text-sm text-slate-400 mb-6">Forever free</div>
         <ul class="space-y-2 text-sm text-slate-300 mb-6">
-          <li class="flex gap-2"><span class="text-green-400">✓</span> All 13 controls</li>
+          <li class="flex gap-2"><span class="text-green-400">✓</span> All 17 controls</li>
+          <li class="flex gap-2"><span class="text-green-400">✓</span> All 3 frameworks (HTML / React / Vue)</li>
           <li class="flex gap-2"><span class="text-green-400">✓</span> 1 page</li>
           <li class="flex gap-2"><span class="text-green-400">✓</span> JSON export with watermark</li>
         </ul>
@@ -206,7 +268,7 @@
 <section class="py-16 px-6">
   <div class="max-w-3xl mx-auto text-center p-10 rounded-3xl bg-gradient-to-br from-indigo-600/20 to-purple-600/20 border border-indigo-500/20">
     <h2 class="text-2xl sm:text-3xl font-bold mb-3">Ready to design smarter?</h2>
-    <p class="text-slate-400 mb-6 max-w-md mx-auto">Stop wrestling with AI prompt wording. Design it visually and let the JSON do the talking.</p>
+    <p class="text-slate-400 mb-6 max-w-md mx-auto">Stop wrestling with AI prompt wording. Design it visually, pick a framework, and let the JSON do the talking.</p>
     <a href="https://ui4ai.vercel.app" class="inline-block px-8 py-3 rounded-xl bg-white hover:bg-slate-200 text-slate-900 font-semibold text-lg transition-colors shadow-lg">
       Launch UI4AI →
     </a>
@@ -222,7 +284,7 @@
       <h3 class="text-lg font-semibold mb-1">qitao2023</h3>
       <p class="text-sm text-slate-400 mb-4">Indie Developer · Product Manager</p>
       <p class="text-sm text-slate-300 leading-relaxed">
-       I read, lift, and build products. UI4AI was born out of frustration — describing UIs to AI with words is painful. So I made a drag-and-drop editor that speaks JSON, the language AI actually understands.
+        I read, lift, and build products. UI4AI was born out of frustration — describing UIs to AI with words is painful. So I made a drag-and-drop editor that speaks JSON, the language AI actually understands.
       </p>
       <div class="flex justify-center gap-4 mt-5">
         <a href="https://github.com/qitao2023" class="text-sm text-slate-500 hover:text-white transition-colors">GitHub</a>
@@ -234,7 +296,7 @@
 <!-- Footer -->
 <footer class="py-10 px-6 border-t border-slate-800">
   <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-    <div>© 2025 UI4AI. All rights reserved.</div>
+    <div>© 2026 UI4AI. All rights reserved.</div>
     <div class="flex gap-6">
       <a href="https://github.com/qitao2023" class="hover:text-white transition-colors">GitHub</a>
       <a href="https://ui4ai.vercel.app" class="hover:text-white transition-colors">App</a>
